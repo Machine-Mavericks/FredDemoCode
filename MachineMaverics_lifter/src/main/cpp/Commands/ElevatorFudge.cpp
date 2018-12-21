@@ -5,33 +5,32 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "../include/Commands/OperatorTankDrive.h"
-
-#include "Robot.h"
-#include "../include/Subsystems/DriveSubsystem.h"
+#include "Commands/ElevatorFudge.h"
+#include "../include/OI.h"
+#include "../include/Subsystems/ElevatorSubsystem.h"
 #include "../include/OI.h"
 
-OperatorTankDrive::OperatorTankDrive() {
+#include "Robot.h"
+
+ElevatorFudge::ElevatorFudge() {
   // Use Requires() here to declare subsystem dependencies
-  Requires(&Robot::Drive);
+  Requires(&Robot::Elevator);
 }
 
 // Called just before this Command runs the first time
-void OperatorTankDrive::Initialize() {}
+void ElevatorFudge::Initialize() {}
 
 // Called repeatedly when this Command is scheduled to run
-void OperatorTankDrive::Execute() {
-  Robot::Drive.drive(-1*Robot::m_oi.LeftJ.GetY(), Robot::m_oi.RightJ.GetY());
+void ElevatorFudge::Execute() {
+  Robot::Elevator.Periodic();
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool OperatorTankDrive::IsFinished() { return false; }
+bool ElevatorFudge::IsFinished() { return false; }
 
 // Called once after isFinished returns true
-void OperatorTankDrive::End() {
-  Robot::Drive.drive(0, 0);
-}
+void ElevatorFudge::End() {}
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void OperatorTankDrive::Interrupted() {}
+void ElevatorFudge::Interrupted() {}

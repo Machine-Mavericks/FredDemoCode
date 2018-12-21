@@ -9,6 +9,7 @@
 #include "RobotMap.h"
 
 #include "RobotMap.h"
+#include "../include/Commands/ElevatorFudge.h"
 
 ElevatorSubsystem::ElevatorSubsystem() :
   frc::Subsystem("ElevatorSubsystem"),
@@ -28,11 +29,12 @@ ElevatorSubsystem::ElevatorSubsystem() :
 
 void ElevatorSubsystem::InitDefaultCommand() {
   // Set the default command for a subsystem here.
-  // SetDefaultCommand(new MySpecialCommand());
+  SetDefaultCommand(new ElevatorFudge());
 }
 
-void ElevatorSubsystem::Periodic(){
-
+void ElevatorSubsystem::Periodic(double target){
+  
+  
 
 }
 void ElevatorSubsystem::Prints(){

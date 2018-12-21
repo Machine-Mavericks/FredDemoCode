@@ -18,7 +18,7 @@ class ElevatorSubsystem : public frc::Subsystem {
  public:
   ElevatorSubsystem();
   void InitDefaultCommand() override;
-  void Periodic();
+  void Periodic(double target);
   void Prints();
 
  private:
