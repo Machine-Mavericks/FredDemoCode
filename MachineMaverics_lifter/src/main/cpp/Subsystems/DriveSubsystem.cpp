@@ -10,6 +10,7 @@
 #include <SmartDashboard/SmartDashboard.h>
 //holds all variables
 #include "RobotMap.h"
+#include "../include/Commands/OperatorTankDrive.h"
 
 DriveSubsystem::DriveSubsystem() ://constructor
   frc::Subsystem("ExampleSubsystem"),
@@ -28,8 +29,14 @@ DriveSubsystem::DriveSubsystem() ://constructor
 //predefined and user created functions
 void DriveSubsystem::InitDefaultCommand() {
   // Set the default command for a subsystem here.
-  // SetDefaultCommand(new MySpecialCommand());
+  SetDefaultCommand(new OperatorTankDrive());
 }
+
+void DriveSubsystem::drive(float left, float right){
+  LeftFront.Set(ControlMode::PercentOutput, left);
+  RightFront.Set(ControlMode::PercentOutput, right);
+}
+
 void DriveSubsystem::Prints(){
   SmartDashboard::PutNumber("drive/drive encoder", 0);
 }

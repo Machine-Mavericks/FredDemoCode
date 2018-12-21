@@ -9,8 +9,10 @@
 
 #include <Commands/Scheduler.h>
 #include <SmartDashboard/SmartDashboard.h>
+#include "../include/Subsystems/DriveSubsystem.h"
 
 ExampleSubsystem Robot::m_subsystem;
+DriveSubsystem Robot::Drive;
 OI Robot::m_oi;
 
 void Robot::RobotInit() {

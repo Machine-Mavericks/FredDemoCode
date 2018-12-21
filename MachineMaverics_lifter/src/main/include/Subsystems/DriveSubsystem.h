@@ -20,6 +20,7 @@ class DriveSubsystem : public frc::Subsystem {
  public://accessible by calling the name of the class
   DriveSubsystem();//constructor
   void InitDefaultCommand() override; //special names inside of classes in a namespace or command group do special things
+  void drive(float left, float right);
   void Prints();
  private://only accessible from inside the class(aka drivesubsystem.h/cpp)	
  	//for PWM

@@ -5,15 +5,16 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "OI.h"
+#pragma once
 
-#include <WPILib.h>
+#include <Commands/Command.h>
 
-OI::OI() :
-  LeftJ(0),//left
-  RightJ(1),//right
-  OpJ(2)
- {
-  // Process operator interface input here.
- 
-}
+class OperatorTankDrive : public frc::Command {
+ public:
+  OperatorTankDrive();
+  void Initialize() override;
+  void Execute() override;
+  bool IsFinished() override;
+  void End() override;
+  void Interrupted() override;
+};

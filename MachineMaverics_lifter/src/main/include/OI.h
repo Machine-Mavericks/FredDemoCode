@@ -6,14 +6,14 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include "Joystick.h"
+#include <Joystick.h>
 
 class OI {
  public:
   OI();
-  Joystick ThisIsOneOfTheJoysticksThatYouWillUseToDriveTheRobotInTheField;
-  Joystick ThisIsTheOtherOneOfTheJoysticksThatYouWillUseToDriveTheRobotOnTheField;
-  Joystick ThisIsTheOperatorJoystick;
+  Joystick LeftJ;
+  Joystick RightJ;
+  Joystick OpJ;
 
   
 };
